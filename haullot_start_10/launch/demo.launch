@@ -1,0 +1,23 @@
+
+<launch>
+  <arg name="gui" default="true" />
+  <param name="use_gui" value="$(arg gui)" />
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find haullot_start_10)/urdf/haullot_start_10.urdf'" />
+
+  <node name="rviz"  pkg="rviz"  type="rviz" args="-d $(find haullot_start_10)/rviz/haullot_start_10.rviz" />
+
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" >
+    <rosparam param="source_list">["/haullot_start_10/joint_commands"]</rosparam>
+    <param name="use_gui" value="$(arg gui)"/>
+    <param name="publish_frequency" type="double" value="20.0" />
+    <remap from="/joint_states" to="/haullot_start_10/joint_states"/>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+      <remap from="/joint_states" to="/haullot_start_10/joint_states"/>
+  </node>
+  
+  <node name="test_pub_robot_command" pkg="haullot_start_10" type="test_pub_robot_command"/>
+
+</launch>

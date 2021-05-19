@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="haullot_start_10">
+
+<link name="world"/>
+
+<joint
+  name="Haullot_start_10_base_link_to_world"
+  type="fixed">
+  <origin
+  xyz="0 0 0.310"
+  rpy="1.57079 0 0" />
+  <parent
+    link="world"/>
+  <child
+    link="Haullot_start_10_base_link" />
+</joint>
+
+<!-- haullot_start_10-->
+  <link
+    name="Haullot_start_10_base_link">
+    <inertial>
+      <origin
+        xyz="-0.1030630592225 -0.0376347811106098 -0.0421478849065606"
+        rpy="0 0 0" />
+      <mass
+        value="4089.54519378538" />
+      <inertia
+        ixx="368.031864433595"
+        ixy="43.6324734735924"
+        ixz="2.94720355246527E-05"
+        iyy="1098.47527598676"
+        iyz="0.000116486745065062"
+        izz="850.867727063988" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Haullot_start_10_rotate_link">
+    <inertial>
+      <origin
+        xyz="0.0622903491933562 0.591502691568246 -5.42612107509721E-07"
+        rpy="0 0 0" />
+      <mass
+        value="4878.86800121507" />
+      <inertia
+        ixx="826.739753413383"
+        ixy="-21.4808409970725"
+        ixz="-6.65078087842398E-06"
+        iyy="419.339592982064"
+        iyz="0.0010799572962618"
+        izz="662.937941862686" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_rotate_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.784313725490196 0.133333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_rotate_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_rotate_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0616024152192241 0.169468785515102 -0.0421478782866078"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_base_link" />
+    <child
+      link="Haullot_start_10_rotate_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Haullot_start_10_lift_link_1">
+    <inertial>
+      <origin
+        xyz="-3.05730440963714E-12 0.749999999999854 -1.77496906061947E-14"
+        rpy="0 0 0" />
+      <mass
+        value="150.8352" />
+      <inertia
+        ixx="30.8583680000001"
+        ixy="-2.80972202165283E-14"
+        ixz="2.81856452577671E-15"
+        iyy="5.15353600000001"
+        iyz="6.78174074291001E-14"
+        izz="30.8583680000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_lift_joint_1"
+    type="prismatic">
+    <origin
+      xyz="-0.0665001010517699 -0.00999999999985349 0"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_rotate_link" />
+    <child
+      link="Haullot_start_10_lift_link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Haullot_start_10_lift_link_2">
+    <inertial>
+      <origin
+        xyz="-3.94356769461979E-12 0.749999999999856 3.01494940124769E-14"
+        rpy="0 0 0" />
+      <mass
+        value="127.2672" />
+      <inertia
+        ixx="25.4110176"
+        ixy="-4.12954444879209E-14"
+        ixz="1.48431201210719E-15"
+        iyy="3.0968352"
+        iyz="6.26089868799169E-14"
+        izz="25.4110176" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_lift_joint_2"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_lift_link_1" />
+    <child
+      link="Haullot_start_10_lift_link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Haullot_start_10_lift_link_3">
+    <inertial>
+      <origin
+        xyz="-5.41863776071239E-12 0.749999999999842 5.42205169651311E-14"
+        rpy="0 0 0" />
+      <mass
+        value="103.6992" />
+      <inertia
+        ixx="20.2818352"
+        ixy="-3.29677594864076E-14"
+        ixz="2.94182956951664E-17"
+        iyy="1.6764704"
+        iyz="4.2625326915756E-14"
+        izz="20.2818352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_lift_joint_3"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_lift_link_2" />
+    <child
+      link="Haullot_start_10_lift_link_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Haullot_start_10_lift_link_4">
+    <inertial>
+      <origin
+        xyz="-1.72084568816899E-15 0.749999999999999 -1.65145674912992E-15"
+        rpy="0 0 0" />
+      <mass
+        value="80.1312" />
+      <inertia
+        ixx="15.4119008"
+        ixy="3.21993915651729E-14"
+        ixz="5.97746071695298E-17"
+        iyy="0.774601599999999"
+        iyz="3.2586199130364E-14"
+        izz="15.4119008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_lift_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_lift_joint_4"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_lift_link_3" />
+    <child
+      link="Haullot_start_10_lift_link_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Haullot_start_10_loading_device">
+    <inertial>
+      <origin
+        xyz="0.676066587615475 0.706783134841028 9.24589964798606E-08"
+        rpy="0 0 0" />
+      <mass
+        value="421.499820519036" />
+      <inertia
+        ixx="181.385447789709"
+        ixy="-128.349054222057"
+        ixz="-2.47209782798231E-05"
+        iyy="125.946602914178"
+        iyz="-2.92355053794222E-05"
+        izz="277.914039031505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_loading_device.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.784313725490196 0.133333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/Haullot_start_10_loading_device.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Haullot_start_10_loading_device_fix_joint"
+    type="fixed">
+    <origin
+      xyz="-1.4729533420782 -0.255610438701392 0"
+      rpy="0 0 0" />
+    <parent
+      link="Haullot_start_10_lift_link_4" />
+    <child
+      link="Haullot_start_10_loading_device" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+<!-- haullot_start_10 end -->
+
+<joint
+name="Haullot_start_10_loading_device_to_guide_rail"
+type="fixed">
+<origin
+  xyz="0 0 0.02"
+  rpy="0 -1.57079 0" />
+<parent
+  link="Haullot_start_10_loading_device" />
+<child
+  link="guide_rail_base_link" />
+<axis
+  xyz="0 0 0" />
+</joint>
+
+<!-- guide rail -->
+<link
+    name="guide_rail_base_link">
+    <inertial>
+      <origin
+        xyz="-0.030425 0.077875 -0.0058412"
+        rpy="0 0 0" />
+      <mass
+        value="33.989" />
+      <inertia
+        ixx="0.22428"
+        ixy="-1.3416E-17"
+        ixz="-3.2573E-18"
+        iyy="1.621"
+        iyz="8.3194E-19"
+        izz="1.5184" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/guide_rail_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/guide_rail_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="guide_rail_Link">
+    <inertial>
+      <origin
+        xyz="1.7347E-18 -0.016966 2.8936E-18"
+        rpy="0 0 0" />
+      <mass
+        value="2.9064" />
+      <inertia
+        ixx="0.016095"
+        ixy="1.6922E-20"
+        ixz="1.9079E-18"
+        iyy="0.036256"
+        iyz="2.3031E-20"
+        izz="0.020446" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/guide_rail_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/guide_rail_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="guide_rail_sliding_joint"
+    type="prismatic">
+    <origin
+      xyz="0.01 0.212 0"
+      rpy="0 0 0" />
+    <parent
+      link="guide_rail_base_link" />
+    <child
+      link="guide_rail_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.28"
+      upper="0.28"
+      effort="0"
+      velocity="0" />
+  </joint>
+<!-- guide rail end -->
+
+<joint
+name="guide_rail_Link_to_kuka_r900"
+type="fixed">
+<origin
+  xyz="0 0 0"
+  rpy="-1.57079 -1.57079 0" />
+<parent
+  link="guide_rail_Link" />
+<child
+  link="base_link" />
+<axis
+  xyz="1 0 0" />
+</joint>
+
+<!-- kuka r900 robot -->
+<link name="base_link">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/visual/base_link.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.505882352941 0.470588235294 0.388235294118 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/collision/base_link.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/visual/link_1.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.964705882353 0.470588235294 0.156862745098 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/collision/link_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_2">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6r900sixx/visual/link_2.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.964705882353 0.470588235294 0.156862745098 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6r900sixx/collision/link_2.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_3">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/visual/link_3.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.964705882353 0.470588235294 0.156862745098 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/collision/link_3.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_4">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6r900sixx/visual/link_4.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.964705882353 0.470588235294 0.156862745098 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6r900sixx/collision/link_4.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_5">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/visual/link_5.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.964705882353 0.470588235294 0.156862745098 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/collision/link_5.stl"/>
+    </geometry>
+  </collision>
+</link>
+<link name="link_6">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/visual/link_6.dae"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.505882352941 0.470588235294 0.388235294118 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://haullot_start_10/meshes/kr6_agilus/collision/link_6.stl"/>
+    </geometry>
+  </collision>
+</link>
+<!-- This frame corresponds to the $FLANGE coordinate system in KUKA KRC controllers. -->
+<link name="tool0"/>
+<joint name="joint_a1" type="revolute">
+  <origin rpy="0 0 0" xyz="0 0 0.400"/>
+  <parent link="base_link"/>
+  <child link="link_1"/>
+  <axis xyz="0 0 -1"/>
+  <limit effort="0" lower="-2.96705972839" upper="2.96705972839" velocity="6.28318530718"/>
+</joint>
+<joint name="joint_a2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.025 0 0"/>
+  <parent link="link_1"/>
+  <child link="link_2"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="0" lower="-3.31612557879" upper="0.785398163397" velocity="5.23598775598"/>
+</joint>
+<joint name="joint_a3" type="revolute">
+  <origin rpy="0 0 0" xyz="0.455 0 0"/>
+  <parent link="link_2"/>
+  <child link="link_3"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="0" lower="-2.09439510239" upper="2.72271363311" velocity="6.28318530718"/>
+</joint>
+<joint name="joint_a4" type="revolute">
+  <origin rpy="0 0 0" xyz="0 0 0.035"/>
+  <parent link="link_3"/>
+  <child link="link_4"/>
+  <axis xyz="-1 0 0"/>
+  <limit effort="0" lower="-3.22885911619" upper="3.22885911619" velocity="6.6497044501"/>
+</joint>
+<joint name="joint_a5" type="revolute">
+  <origin rpy="0 0 0" xyz="0.420 0 0"/>
+  <parent link="link_4"/>
+  <child link="link_5"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="0" lower="-2.09439510239" upper="2.09439510239" velocity="6.77187749774"/>
+</joint>
+<joint name="joint_a6" type="revolute">
+  <origin rpy="0 0 0" xyz="0.080 0 0"/>
+  <parent link="link_5"/>
+  <child link="link_6"/>
+  <axis xyz="-1 0 0"/>
+  <limit effort="0" lower="-6.10865238198" upper="6.10865238198" velocity="10.7337748998"/>
+</joint>
+<joint name="joint_a6-tool0" type="fixed">
+  <parent link="link_6"/>
+  <child link="tool0"/>
+  <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
+</joint>
+<!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+<link name="base"/>
+<joint name="base_link-base" type="fixed">
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base"/>
+</joint>
+<!-- kuka r900 robot end -->
+
+<joint name="kuka_r900_to_sprayer" type="fixed">
+  <origin rpy="1.57079 0 0" xyz="0 0 0"/>
+  <parent link="tool0"/>
+  <child link="sprayer_base_link"/>
+</joint>
+
+<!-- sprayer -->
+<link
+    name="sprayer_base_link">
+    <inertial>
+      <origin
+        xyz="0.019037 0.01586 7.0801E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.025346" />
+      <inertia
+        ixx="2.1907E-05"
+        ixy="-5.58E-06"
+        ixz="-5.1033E-08"
+        iyy="3.2812E-05"
+        iyz="-2.5513E-08"
+        izz="2.1331E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/sprayer_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/sprayer_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="sprayer_Link">
+    <inertial>
+      <origin
+        xyz="-0.069035 -0.011363 9.0848E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.25136" />
+      <inertia
+        ixx="6.009E-05"
+        ixy="7.498E-07"
+        ixz="4.7205E-09"
+        iyy="0.00013161"
+        iyz="-6.5804E-10"
+        izz="0.00012743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/sprayer_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haullot_start_10/meshes/sprayer_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sprayer_fix_joint"
+    type="fixed">
+    <origin
+      xyz="0.10032 0.09026 0"
+      rpy="0 0 0" />
+    <parent
+      link="sprayer_base_link" />
+    <child
+      link="sprayer_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+<!-- sprayer end -->
+</robot>
