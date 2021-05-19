@@ -1,13 +1,13 @@
 # Haullot-STAR-10-simulation
 
 ## 1.安装
-`cd`
-`mkdir Haullot-STAR-10-simulation && cd Haullot-STAR-10-simulation`
-`mkdir src && cd src`
-`git clone https://github.com/Jiongyu/Haullot-STAR-10-simulation.git`
-`cd ..`
-`catkin_make`
-`source devel/setup.bash`
+`cd`  
+`mkdir Haullot-STAR-10-simulation && cd Haullot-STAR-10-simulation`  
+`mkdir src && cd src`  
+`git clone https://github.com/Jiongyu/Haullot-STAR-10-simulation.git`  
+`cd ..`  
+`catkin_make`  
+`source devel/setup.bash`  
 
 ## 2.demo
 `roslaunch haullot_start_10 demo.launch`
